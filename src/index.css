@@ -13,3 +13,44 @@
   src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
   font-display: swap;
 }
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #F8F9FF;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-around;
+  height: 64px;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.title-wrapper {
+}
+
+.title {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.category-wrapper > p{
+  margin-left: 20px;
+  margin-right: 20px;
+  letter-spacing: 1px;
+}
+
+.cart-wrapper {
+  img {
+  width: 24px;
+  height: 24px;
+}
+}
+
