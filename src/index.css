@@ -26,14 +26,12 @@ body {
   display: flex;
   justify-content: space-around;
   height: 64px;
+  border-bottom: 1px solid #41475214;
   div {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-}
-
-.title-wrapper {
 }
 
 .title {
@@ -48,9 +46,88 @@ body {
 }
 
 .cart-wrapper {
+  width: 30px;
   img {
   width: 24px;
   height: 24px;
 }
 }
 
+.hero-section-contaienr {
+  width: 100%;
+  display: flex;
+  justify-self: center;
+  justify-content: space-evenly;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  box-shadow:  inset 0 50px 20px -60px #41475259;
+  clip-path: inset(0px 0px 0px 0px);
+  background:
+  radial-gradient(circle at 20% 20%, rgba(244, 214, 223, 0.25) 0%, transparent 60%),
+  radial-gradient(circle at 55% 50%, rgba(216, 185, 245, 0.20) 0%, transparent 55%),
+  radial-gradient(circle at 85% 25%, rgba(166, 184, 255, 0.20) 0%, transparent 60%),
+  linear-gradient(
+    135deg,
+    #fffafb 0%,
+    #fcf8ff 40%,
+    #f7f3ff 70%,
+    #f3f7ff 100%
+  );
+}
+
+
+.hero-left-section-container {
+  width: 50%;
+  max-width: 886px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-main-text {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  line-height: 0.95;
+  font-weight: 700;
+  margin-bottom: 25px;
+  span {
+    color: #0161AB;
+  }
+}
+
+.hero-text-content {
+  width: 500px;
+  color: #414752;
+  letter-spacing: .5px;
+  line-height: 1.5;
+}
+
+.hero-section-button-container {
+  margin: 20px 0px 20px 0px;
+  button {
+    padding: 10px 25px 10px 25px;
+    border-radius: 25px;
+    border: none;
+  }
+}
+
+.shop-btn {
+  background-color: #0161AB;
+  color: white;
+  font-weight: 600;
+}
+
+.categories-btn {
+  margin-left: 10px;
+  background-color: white;
+}
+
+
+.hero-right-section-container {
+  width: 450px;
+  img {
+    height: 500px;
+    width: 100%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.104);
+  }
+}

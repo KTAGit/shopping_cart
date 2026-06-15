@@ -8,7 +8,7 @@ export function Navbar() {
             <div className="category-wrapper">
                 <p>Home</p>
                 <p>Shop</p>
-                <p>About</p>
+                <p>Categories</p>
             </div>
             <div className="cart-wrapper">
                 <img src={cartIcon} alt="" />
