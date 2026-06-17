@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Navbar } from './Navbar'
 import { Hero } from './Hero'
 import { Categories } from './Categories'
+import { SignUp } from './SignUp'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
     <Navbar />
     <Hero />
     <Categories />
+    <SignUp />
     </>
   )
 }
