@@ -3,6 +3,7 @@ import { Navbar } from './Navbar'
 import { Hero } from './Hero'
 import { Categories } from './Categories'
 import { SignUp } from './SignUp'
+import { Footer } from './Footer'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <Hero />
     <Categories />
     <SignUp />
+    <Footer />
     </>
   )
 }

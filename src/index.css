@@ -266,7 +266,7 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
 
 
 .sign-up-container {
-  margin: 400px 0px 400px 0px;
+  margin: 300px 0px 300px 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -308,6 +308,27 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
       font-weight: 600;
     }
 
+  }
+}
+
+.footer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F5F6FE;
+
+  h1 {
+    letter-spacing: .9px;
+    font-size: 2.5em;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 13px;
+    font-weight: 200;
+    color:#414752;
+    letter-spacing: .5px;
   }
 }
 
