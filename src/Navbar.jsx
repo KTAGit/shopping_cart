@@ -2,7 +2,8 @@ import cartIcon from "./assets/icons/shopping-cart-icon.png"
 export function Navbar() {
     return (
         <div className="navbar-container">
-           <div className="title-wrapper">
+            <div className="navbar-content-wrapper">
+                <div className="title-wrapper">
              <h1 className="title">VALERIUS</h1>
            </div>
             <div className="category-wrapper">
@@ -13,6 +14,8 @@ export function Navbar() {
             <div className="cart-wrapper">
                 <img src={cartIcon} alt="" />
             </div>
+            </div>
+           
 
         </div>
     )

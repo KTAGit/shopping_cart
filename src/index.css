@@ -27,11 +27,21 @@ body {
   justify-content: space-around;
   height: 64px;
   border-bottom: 1px solid #41475214;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+   background: rgba(255, 255, 255, 0.15); 
+   backdrop-filter: blur(12px); 
   div {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.navbar-content-wrapper {
+  width: 87%;
+  max-width: 1750px;
 }
 
 .title {
@@ -119,6 +129,7 @@ body {
 .categories-btn {
   margin-left: 10px;
   background-color: white;
+  box-shadow: 0px 0px 20px 1px #41475220;
 }
 
 
@@ -131,3 +142,125 @@ body {
     box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.104);
   }
 }
+
+.text-content-wrapper {
+  grid-column: 1 / 5;
+}
+
+.categories-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categories-title {
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.categories-text-content {
+ margin-top: 0px;
+ letter-spacing: .5px;
+}
+
+
+.categories-wrapper {
+  width: 90%;
+  max-width: 1750px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 350px 350px;
+  gap: 20px;
+  
+}
+
+.categories-wrapper > div {
+  position: relative;
+  img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    object-fit: cover;
+  }
+}
+
+.mens-clothing-wrapper {
+  grid-column: 1 / 3;
+  box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
+  display: inline-block;
+ img {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  z-index: -1;
+ }
+ p {
+  width: 100%;
+  position: absolute;
+  top: 230px;
+  font-size: 1.4rem;
+  text-indent: 25px;
+ }
+}
+.womans-clothing-wrapper {
+  grid-column: 3 / 5;
+box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
+  display: inline-block;
+ img {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  z-index: -1;
+ }
+ p {
+  width: 100%;
+  position: absolute;
+  top: 230px;
+  font-size: 1.4rem;
+  text-indent: 25px;
+ }
+}
+.jewelry-wrapper {
+  grid-column: 0 / 1;
+  grid-row: 3 / 4;
+ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
+  display: inline-block;
+ img {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  z-index: -1;
+ }
+ p {
+  width: 100%;
+  position: absolute;
+  top: 230px;
+  font-size: 1.4rem;
+  text-indent: 25px;
+ }
+
+}
+.electronics-wrapper {
+  grid-column: 2 / 5;
+  grid-row: 3 / 4;
+box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
+  display: inline-block;
+ img {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  z-index: -1;
+ }
+ p {
+  width: 100%;
+  position: absolute;
+  top: 230px;
+  font-size: 1.4rem;
+  text-indent: 25px;
+ }
+  
+}
+
+
