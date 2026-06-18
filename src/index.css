@@ -18,8 +18,19 @@
 }
 
 body {
+  min-height: 100dvh;
   margin: 0;
   background-color: #F8F9FF;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
 }
 
 .navbar-container {
@@ -332,4 +343,121 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
   }
 }
 
+.category-tags-container {
+  max-width: 95%;
+  padding-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-self: center;
+  span {
+    height: 30px;
+    width: fit-content;
+    padding: 10px 25px 0px 25px;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px 1px #41475231;
+    text-align: center;
+  }
+}
 
+.cards-container {
+  width: 95%;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+  justify-items: center;
+  gap: 20px;
+}
+
+.card-wrapper {
+  max-width: 400px;
+  background-color: #FFFFFF;
+  backdrop-filter: blur(12px); 
+  box-shadow: 0px 0px 20px 1px #41475220;
+  padding: 25px;
+  border-radius: 30px;
+  img {
+    height: 400px;
+    width: 100%;
+    border-radius: 30px;
+  }
+  p {
+    letter-spacing: .5px;
+  }
+  h2 {
+    letter-spacing: 1px;
+  }
+}
+
+.category {
+  color: #414752ce;
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+.item-description {
+  margin-top: 10px;
+  color: #414752;
+}
+
+.item-name {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.item-review {
+  margin: 0;
+  font-size: 13px;
+}
+
+.item-rating {
+  display: flex;
+  align-items: center;
+  img {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+  }
+}
+
+.add-to-cart-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    color: #0161AB;
+  }
+
+  span {
+    border-radius: 25px;
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #0161AB;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0px 0px 20px 1px #41475231;
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      filter: contrast(200%) brightness(200%);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    width: 100%;
+  }
+}

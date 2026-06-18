@@ -1,18 +1,18 @@
 import { useState } from 'react'
 import { Navbar } from './Navbar'
-import { Hero } from './Hero'
-import { Categories } from './Categories'
-import { SignUp } from './SignUp'
+import { Home } from './Home'
 import { Footer } from './Footer'
+import { Outlet } from 'react-router'
 
 function App() {
+
   return (
     <>
     <Navbar />
-    <Hero />
-    <Categories />
-    <SignUp />
-    <Footer />
+    <div className='main-content'>
+        <Outlet />
+    </div>
+    <Footer /> 
     </>
   )
 }
