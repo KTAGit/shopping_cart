@@ -20,7 +20,18 @@
 body {
   min-height: 100dvh;
   margin: 0;
-  background-color: #F8F9FF;
+  /* background-color: #F8F9FF; */
+  background:
+  radial-gradient(circle at 20% 20%, rgba(244, 214, 223, 0.166) 0%, transparent 60%),
+  radial-gradient(circle at 55% 50%, rgba(216, 185, 245, 0.138) 0%, transparent 55%),
+  radial-gradient(circle at 85% 25%, rgba(166, 184, 255, 0.158) 0%, transparent 60%),
+  linear-gradient(
+    135deg,
+    #fffafb 0%,
+    #fcf8ff 40%,
+    #f7f3ff 70%,
+    #f3f7ff 100%
+  );
 }
 
 #root {
@@ -75,7 +86,7 @@ body {
 }
 }
 
-.hero-section-contaienr {
+.hero-section-container {
   width: 100%;
   display: flex;
   justify-self: center;
@@ -84,17 +95,6 @@ body {
   padding-bottom: 100px;
   box-shadow:  inset 0 50px 20px -60px #41475259;
   clip-path: inset(0px 0px 0px 0px);
-  background:
-  radial-gradient(circle at 20% 20%, rgba(244, 214, 223, 0.25) 0%, transparent 60%),
-  radial-gradient(circle at 55% 50%, rgba(216, 185, 245, 0.20) 0%, transparent 55%),
-  radial-gradient(circle at 85% 25%, rgba(166, 184, 255, 0.20) 0%, transparent 60%),
-  linear-gradient(
-    135deg,
-    #fffafb 0%,
-    #fcf8ff 40%,
-    #f7f3ff 70%,
-    #f3f7ff 100%
-  );
 }
 
 
@@ -117,7 +117,7 @@ body {
 }
 
 .hero-text-content {
-  width: 500px;
+  max-width: 500px;
   color: #414752;
   letter-spacing: .5px;
   line-height: 1.5;
@@ -126,9 +126,10 @@ body {
 .hero-section-button-container {
   margin: 20px 0px 20px 0px;
   button {
-    padding: 10px 25px 10px 25px;
+    padding: 15px 30px 15px 30px;
     border-radius: 25px;
     border: none;
+    letter-spacing: 1px;
   }
 }
 
@@ -327,7 +328,7 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #F5F6FE;
+  background-color: transparent;
 
   h1 {
     letter-spacing: .9px;
@@ -377,6 +378,8 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
   box-shadow: 0px 0px 20px 1px #41475220;
   padding: 25px;
   border-radius: 30px;
+  background: rgba(255, 255, 255, 0.097); 
+  backdrop-filter: blur(12px); 
   img {
     height: 400px;
     width: 100%;
@@ -541,6 +544,8 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
   gap: 30px;
   border-radius: 30px;
   box-shadow: 0px 0px 20px 1px #41475220;
+  background: rgba(255, 255, 255, 0.15); 
+   backdrop-filter: blur(12px); 
 }
 
 .item-img-wrapper {
@@ -617,6 +622,8 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
   border: 1px solid #4147521d;
   border-radius: 30px;
   box-shadow: 0px 0px 20px 1px #41475220;
+  background: rgba(255, 255, 255, 0.15); 
+   backdrop-filter: blur(12px); 
   div {
     display: flex;
     justify-content: space-between;
@@ -667,6 +674,27 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
   }
 }
 
+@media (max-width: 1000px) {
+  .hero-section-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .hero-left-section-container {
+    width: 90%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .jewelry-wrapper {
+    grid-column: 1 / 3;
+  }
+
+  .electronics-wrapper {
+    grid-column: 3 / 5;
+  }
+}
+
 
 @media (max-width: 940px) {
   .cart-main-container {
@@ -679,6 +707,94 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
 }
 
 @media (max-width: 600px) {
+
+  .hero-section-container {
+    padding-top: 100px;
+  }
+
+  .hero-right-section-container {
+    
+    img {
+      height: 400px;
+    }
+  }
+
+  .hero-section-button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    button {
+      width: 100%;
+    }
+    .categories-btn {
+      margin: 0;
+    }
+  }
+
+  .category-wrapper {
+    display: none !important;
+  }
+
+  .hero-right-section-container {
+    width: 90%;
+  }
+
+  .categories-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 250px 250px 250px 250px;
+  }
+
+  .mens-clothing-wrapper {
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
+    p {
+      top: 150px;
+    }
+  }
+
+  .womans-clothing-wrapper {
+    grid-row: 3 / 4;
+    grid-column: 1 / 5;
+    p {
+      top: 150px;
+    }
+  }
+
+  .jewelry-wrapper {
+    grid-row: 4 / 5;
+    grid-column: 1 / 5;
+    p {
+      top: 150px;
+    }
+  }
+
+  .electronics-wrapper {
+    grid-row: 5 / 6;
+    grid-column: 1 / 5;
+    p {
+      top: 150px;
+    }
+  }
+
+  .sign-up-container {
+    text-align: center;
+    p {
+      width: 80%;
+    }
+    form {
+      flex-direction: column;
+      input {
+        height: 60px;
+        text-indent: 25px;
+      }
+      button {
+        height: 50px;
+        font-size: 15px;
+      }
+    }
+  }
+
   .cards-container {
     width: 100%;
   }
