@@ -1,12 +1,12 @@
 import cartIcon from "./assets/icons/shopping-cart-icon.png"
 import menuIcon from "./assets/icons/menu.png"
 import { useState } from "react"
-import { Link, NavLink } from "react-router"
+import { Link, NavLink, useLocation } from "react-router"
 
 export function Navbar() {
     const [isActive, setIsActive] = useState(false) 
-    const [selected, setIsSelected] = useState("Home")
 
+    const location = useLocation()
     const navLinks = [["Home", "/"], ["Shop", "/shop"], ["Categories", "/#categories"]]
 
     return (
@@ -19,14 +19,14 @@ export function Navbar() {
 
                 <div className={isActive ? "category-wrapper active" : "category-wrapper"}>
                     {navLinks.map(([label, des], index) => (
-                        <NavLink key={index} to={des} className={selected === label ? "selected" : ""} onClick={() => {setIsSelected(label)}}>
+                        <NavLink key={index} to={des} className={location.pathname + location.hash === des ? "selected" : ""}>
                             {label}
                         </NavLink>
                     ))}
                 </div>
 
                 <div className="cart-wrapper">
-                    <NavLink to="/cart" onClick={() => setIsSelected("")}>
+                    <NavLink to="/cart">
                         <img src={cartIcon} alt="" />
                     </NavLink>
                 </div>
