@@ -1,7 +1,7 @@
 import heroImg from "./assets/hero-image.png"
 export function Hero() {
     return (
-        <div className="hero-section-container">
+        <div id="home" className="hero-section-container">
             <div className="hero-left-section-container">
                 <h1 className="hero-main-text">Discover Your Next <span>Favorite Product</span></h1>
                 <p className="hero-text-content">Experience luxury redefined through our curated selection of ethereal objects designed for the visionary soul.</p>

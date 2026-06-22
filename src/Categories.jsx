@@ -2,9 +2,25 @@ import electronicsImg from "./assets/categories-img/electronics.png"
 import mensImg from "./assets/categories-img/men's.png"
 import womensImg from "./assets/categories-img/womens.png"
 import jewelryImg from "./assets/categories-img/jewelry.png"
+import { useLocation } from "react-router"
+import { useEffect } from "react"
 export function Categories() {
+    const location = useLocation()
+
+    useEffect(() => {
+        if (location.hash === "#categories") {
+            const element = document.getElementById("categories")
+
+            if (element) {
+                element.scrollIntoView({
+                    behavior: "smooth"
+                })
+            }
+        }
+    },[location])
+
     return (
-        <div className="categories-container">
+        <div id="categories" className="categories-container">
             
             <div className="categories-wrapper">
                 <div className="text-content-wrapper">

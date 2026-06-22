@@ -15,6 +15,11 @@
 }
 :root {
   font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+
+  a, a:visited, a:hover, a:active {
+    color: inherit; 
+  }
 }
 
 body {
@@ -37,6 +42,10 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+}
+
+.selected {
+  color: #0161AB !important;
 }
 
 .main-content {
@@ -77,10 +86,14 @@ body {
   font-size: 2.5em;
 }
 
-.category-wrapper > p{
+.category-wrapper > *{
   margin-left: 20px;
   margin-right: 20px;
   letter-spacing: 1px;
+}
+
+.category-wrapper > a {
+  text-decoration: none;
 }
 
 .cart-wrapper {
