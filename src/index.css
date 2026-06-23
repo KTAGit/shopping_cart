@@ -338,6 +338,9 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
       font-weight: 600;
     }
 
+    button:hover {
+      cursor: pointer;
+    }
   }
 }
 
