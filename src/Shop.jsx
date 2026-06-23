@@ -2,21 +2,24 @@ import placeholderImg from "./assets/unnamed.png"
 import star from "./assets/icons/star.png"
 import addCartIcon from "./assets/icons/add-cart.png"
 import { useOutletContext } from "react-router"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { useLocation } from "react-router"
 export function Shop() {
+    const location = useLocation()
     const [data, setData] = useOutletContext()
-    
+    const [itemCategory, setItemCategory] = useState(location.state?.category || "all")
+    const category = [...new Set(data?.map(object => object.category))] 
+    const filteredProducts = data?.filter(product => itemCategory === "all" || product.category === itemCategory)
     return (
         <>
         <div className="category-tags-container">
-            <span className="category-tag">All Products</span>
-            <span className="category-tag">All Products</span>
-            <span className="category-tag">All Products</span>
-            <span className="category-tag">All Products</span>
-            <span className="category-tag">All Products</span>
+            <span className={itemCategory === "all" ? "category-tag active-category" : "category-tag"} onClick={() => {setItemCategory("all")}}>All Products</span>
+            {category.map((object, index) => (
+                <span key={index} className={object === itemCategory ? "category-tag active-category" : "category-tag"} onClick={() => setItemCategory(object)}>{object}</span>
+            ))}
         </div>
         <div className="cards-container">
-            {data?.map((object) => (
+            {filteredProducts?.map((object) => (
             <div key={object.id} className="card-wrapper">
                 <img src={object.image} alt="" />
                 <p className="category">{object.category}</p>
