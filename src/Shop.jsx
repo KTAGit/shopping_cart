@@ -24,6 +24,8 @@ export function Shop() {
                 
             }else {
                 setItemCount({quantity: quantity, productId: productId})
+                action === "add" ? setItemCount(prev => ({...prev, quantity: prev.quantity + quantity})) :
+                ""
             }
             
         }else if (type === "input") {
@@ -32,7 +34,7 @@ export function Shop() {
             setItemCount({quantity: value, productId: productId})
         }
     }
-    console.log(itemCount)
+
     return (
         <>
         <div className="category-tags-container">
