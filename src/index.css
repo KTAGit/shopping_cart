@@ -912,13 +912,6 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
 
   .item-description {
     margin-bottom: 30px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 50px;
-    #text{
-      height: 100px;
-    }
   }
 
   .item-quantity-price-wrapper {
