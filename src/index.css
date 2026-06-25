@@ -348,6 +348,7 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
       border: none;
       border-radius: 50px;
       box-shadow: 0px 0px 20px 1px #41475220;
+      font-size: 16px;
     }
 
     button {
@@ -439,6 +440,10 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
   }
   p {
     letter-spacing: .5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;   
+    -webkit-box-orient: vertical;  
+    overflow: hidden; 
   }
   h2 {
     letter-spacing: 1px;
@@ -470,7 +475,7 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
 .rating-item-quantity-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   button {
     margin: 0;
     padding: 0;
@@ -907,6 +912,10 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
 
   .item-description {
     margin-bottom: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50px;
     #text{
       height: 100px;
     }
