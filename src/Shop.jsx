@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import { useLocation } from "react-router"
 export function Shop() {
     const location = useLocation()
-    const [data, setData] = useOutletContext()
+    const [data, setData, cart, setCart] = useOutletContext()
     const [itemCategory, setItemCategory] = useState(location.state?.category || "all")
     const [itemCount, setItemCount] = useState(null)
     const category = [...new Set(data?.map(object => object.category))] 
@@ -33,6 +33,25 @@ export function Shop() {
             if (Number.isNaN(value)) return
             setItemCount({quantity: value, productId: productId})
         }
+    }
+
+    function handleAddToCart(productId) {
+        let product = data.find((item) => item.id === productId)
+
+        if (!product) return
+
+        const amount = itemCount?.productId === productId ? itemCount.quantity : 1
+
+        setCart(prev => {
+            const existing = prev.find(item => item.id === productId)
+
+            if (existing) {
+                return prev.map(item => item.id === productId ? {...item, quantity: item.quantity + amount} : item)
+            }
+
+            return [...prev, {...product, quantity: amount}]
+        })
+        
     }
 
     return (
@@ -64,7 +83,7 @@ export function Shop() {
                 
                 <div className="add-to-cart-wrapper">
                     <p className="item-price">${object.price}</p>
-                    <span className="add-to-cart-btn"> <img src={addCartIcon} alt="" /> ADD TO CART</span>
+                    <span className="add-to-cart-btn" onClick={() => handleAddToCart(object.id)}> <img src={addCartIcon} alt="" /> ADD TO CART</span>
                 </div>
             </div>
             ))}

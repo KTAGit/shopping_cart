@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 function App() {
 
 const [data, setData] = useState(null)
+const [cart, setCart] = useState([])
 
     useEffect(() =>  {
         const loadData = async () => {
@@ -25,7 +26,7 @@ const [data, setData] = useState(null)
     <>
     <Navbar />
     <div className='main-content'>
-        <Outlet context={[data, setData]}/>
+        <Outlet context={[data, setData, cart, setCart]}/>
     </div>
     <Footer /> 
     </>
