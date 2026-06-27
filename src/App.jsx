@@ -24,7 +24,7 @@ const [cart, setCart] = useState([])
     },[])
   return (
     <>
-    <Navbar />
+    <Navbar cart={cart}/>
     <div className='main-content'>
         <Outlet context={[data, setData, cart, setCart]}/>
     </div>

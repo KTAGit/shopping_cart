@@ -1,9 +1,10 @@
 import cartIcon from "./assets/icons/shopping-cart-icon.png"
 import menuIcon from "./assets/icons/menu.png"
+import { CartNotification } from "./CartNotification"
 import { useState } from "react"
 import { Link, NavLink, useLocation } from "react-router"
 
-export function Navbar() {
+export function Navbar({cart}) {
     const [isActive, setIsActive] = useState(false) 
 
     const location = useLocation()
@@ -26,7 +27,8 @@ export function Navbar() {
                 </div>
 
                 <div className="cart-wrapper">
-                    <NavLink to="/cart">
+                    <NavLink to="/cart" className="nav-cart-wrapper">
+                        <CartNotification cart={cart}/>
                         <img src={cartIcon} alt="" />
                     </NavLink>
                 </div>
