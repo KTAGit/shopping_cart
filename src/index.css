@@ -488,10 +488,17 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
 
 .item-description {
   margin-top: 10px;
+  max-width: 450px;
   color: #414752b0;
+  letter-spacing: .5px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   
+  -webkit-box-orient: vertical;  
+  overflow: hidden; 
 }
 
 .item-name {
+  max-width: 560px;
   margin-top: 10px;
   margin-bottom: 5px;
   letter-spacing: 1px;
@@ -628,6 +635,7 @@ box-shadow:  inset 0 -120px 60px -10px #f8f9ff90;
 .chickout-summary-container {
   grid-column: 2 / 3;
   min-width: 300px;
+  max-height: 450px;
 }
 
 .item-wrapper {
