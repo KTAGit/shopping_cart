@@ -1,9 +1,8 @@
 import placeholderImg from "./assets/unnamed.png"
 import star from "./assets/icons/star.png"
 import addCartIcon from "./assets/icons/add-cart.png"
-import { useOutletContext } from "react-router"
+ import { useLocation, useOutletContext } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { useLocation } from "react-router"
 export function Shop() {
     const location = useLocation()
     const [data, setData, cart, setCart] = useOutletContext()
@@ -75,15 +74,15 @@ export function Shop() {
                         <p className="item-review">{object.rating.rate} ({object.rating.count} reviews)</p>
                     </div>
                     <div className="item-quantity-wrapper">
-                        <button className="card-minus-btn" onClick={() => handleProductCount("subtract", "button", 1, object.id)}>−</button>
+                        <button className="card-minus-btn" aria-label="decrement" onClick={() => handleProductCount("subtract", "button", 1, object.id)}>−</button>
                         <input type="text" value={itemCount?.productId === object.id ? itemCount.quantity : 1} onChange={(e) => handleProductCount("", "input", e.target.value, object.id)} name="" id=""/>
-                        <button className="card-plus-btn" onClick={() => handleProductCount("add", "button", 1, object.id)}>+</button>
+                        <button className="card-plus-btn" aria-label="increment" onClick={() => handleProductCount("add", "button", 1, object.id)}>+</button>
                     </div>
                 </div>
                 
                 <div className="add-to-cart-wrapper">
                     <p className="item-price">${object.price}</p>
-                    <span className="add-to-cart-btn" onClick={() => handleAddToCart(object.id)}> <img src={addCartIcon} alt="" /> ADD TO CART</span>
+                    <span className="add-to-cart-btn" role="button" aria-label="addToCartBtn" onClick={() => handleAddToCart(object.id)}> <img src={addCartIcon} alt="" /> ADD TO CART</span>
                 </div>
             </div>
             ))}
