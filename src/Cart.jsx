@@ -1,5 +1,5 @@
 import placeholderImg from "./assets/unnamed.png"
-import { useOutletContext } from "react-router"
+import { useOutletContext } from "react-router-dom";
 export function Cart() {
 
     const [, , cart, setCart] = useOutletContext()
@@ -51,9 +51,9 @@ export function Cart() {
                             <p className="item-description">{item.description}</p>
                             <div className="item-quantity-price-wrapper">
                                 <div className="cart-item-quantity-wrapper">
-                                    <button onClick={() => subtractItemQuantity(item.id)} className="item-minus-btn">−</button>
+                                    <button type="button" aria-label="decrement" onClick={() => subtractItemQuantity(item.id)} className="item-minus-btn">−</button>
                                     <p className="quantity-count">{item.quantity}</p>
-                                    <button onClick={() => addItemQuantity(item.id)} className="item-plus-btn">+</button>
+                                    <button type="button" aria-label="increment" onClick={() => addItemQuantity(item.id)} className="item-plus-btn">+</button>
                                 </div>
                                 <div className="price-wrapper">
                                     <p className="price">${item.price}</p>

@@ -18,7 +18,7 @@ export function Navbar({cart}) {
                     <h1 className="title">VALERIUS</h1>
                 </div>
 
-                <div className={isActive ? "category-wrapper active" : "category-wrapper"}>
+                <div onClick={() => setIsActive(false)} className={isActive ? "category-wrapper active" : "category-wrapper"}>
                     {navLinks.map(([label, des], index) => (
                         <NavLink key={index} to={des} className={location.pathname + location.hash === des ? "selected" : ""}>
                             {label}
