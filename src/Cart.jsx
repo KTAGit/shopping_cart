@@ -11,6 +11,26 @@ export function Cart() {
     const tax = Math.round(6 / 100 * subTotal * 100) / 100
     const total = Math.round((subTotal + tax) * 100) / 100
 
+    const subtractItemQuantity = (itemId) => {
+        setCart(
+            cart.map(item => {
+                if (item.id === itemId) {
+                    return {...item, quantity: item.quantity === 1 ? 1 : item.quantity - 1}
+                }
+                return item
+            })
+        )
+    }
+
+    const addItemQuantity = (itemId) => {
+        setCart(cart.map(item => {
+                if (item.id === itemId) {
+                    return {...item, quantity: item.quantity === 99 ? 99 : item.quantity + 1}
+                }
+                return item
+            })
+        )
+    }
     return (
         <>
         <div className="cart-main-container">
@@ -26,9 +46,9 @@ export function Cart() {
                             <p className="item-description">{item.description}</p>
                             <div className="item-quantity-price-wrapper">
                                 <div className="cart-item-quantity-wrapper">
-                                    <button className="item-minus-btn">−</button>
+                                    <button onClick={() => subtractItemQuantity(item.id)} className="item-minus-btn">−</button>
                                     <p className="quantity-count">{item.quantity}</p>
-                                    <button className="item-plus-btn">+</button>
+                                    <button onClick={() => addItemQuantity(item.id)} className="item-plus-btn">+</button>
                                 </div>
                                 <div className="price-wrapper">
                                     <p className="price">${item.price}</p>
